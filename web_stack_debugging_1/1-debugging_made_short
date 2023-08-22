@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# script of task 0 but using less lines
+# script of task 0 but using less line
 #!/bin/bash
-nginx -t 2>/dev/null || service nginx stop
+nginx -t 2>&1 | grep -q "nginx: configuration file /etc/nginx/nginx.conf test failed" && service nginx stop
